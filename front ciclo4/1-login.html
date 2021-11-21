@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="1-styles-login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="1-script-login.js"></script>
+    <title>login</title>
+</head>
+<body>
+    <div class="container" >
+        <h1>Ocho Bits LTDA</h1>
+        <div class="div divLogin">
+            <h3>Ingresar</h2>
+            <form action="javascript:verificarClient();">
+                <input id="email1" type="email" placeholder="Email" required>
+                <input id="pass1" type="password" placeholder="Contraseña" required> 
+                <button class="btn login" >Iniciar sesión</button>
+            </form>
+            <hr>
+            <button class="btn register" onclick="changeDiv('.divSignin')">Crear cuenta</button>
+        </div>
+        <div class="div divSignin">
+            <h3>Nueva cuenta</h4>
+            <form action="javascript:verifyEmail();">
+                <input id="name" type="text" placeholder="Nombre" required>
+                <input id="email" type="email" placeholder="Email" required>
+                <p class="required rEmail"></p>
+                <input id="pass" type="password" placeholder="Contraseña (Min. 6 caracteres)" required>
+                <input id="passConfirm" type="password" placeholder="Confirmar contraseña" required>
+                <p class="required rPass"></p>
+                <button class="btn login">Registrarse</button>
+            </form>
+            <hr>
+            <a class="backLink" href="javascript:changeDiv('.divLogin');">Ya tengo una cuenta</a>
+        </div>
+    </div>
+</body>
+</html>
