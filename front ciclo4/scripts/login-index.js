@@ -11,10 +11,11 @@ const verifyUser = () => {
         success: function (datos) {
             if(datos.id==null){
                 alert("Email o contraseña incorrectos")
-            }/* else{
-                let cont=0
-                ter(cont, datos.name)
-            } */
+            }else{
+                $('.div').css('display', 'none')
+                $('.welcome').html('Bienvenido '+datos.name)
+                $('#back').html('Volver')
+            }
         }
     })
 }
@@ -26,7 +27,7 @@ const verifyEmail = () => {
         dataType: "json",
         success: function (datos) {
             if(datos){
-                $(".rEmail").html("El email ya existe")
+                $(".rEmail").html("La direccion de correo ya existe")
                 validations(0)
             }else{
                 $(".rEmail").html("")
@@ -38,8 +39,8 @@ const verifyEmail = () => {
 
 const validations = (num) => {
     let correct=num;
-    if($("#pass").val().length<6){
-        $(".rPass").html("La contraseña debe tener minimo 6 caracteres")
+    if($("#pass").val().length<8){
+        $(".rPass").html("La contraseña debe tener minimo 8 caracteres")
     }else{
         $(".rPass").html("")
         correct++
@@ -71,7 +72,7 @@ const registerClient = () =>{
         contentType:'application/JSON',
         success: function(respuesta){
             alert("Registro exitoso")
-            /* window.location.href="index.html" */
+            location.reload()
         }
     });
 }
