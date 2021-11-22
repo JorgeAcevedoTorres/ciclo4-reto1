@@ -5,7 +5,7 @@ const changeDiv = (opc) => {
 
 const verifyUser = () => {
     $.ajax({
-        url: "http://localhost:8080/api/User/"+$("#email1").val()+"/"+$("#pass1").val(),
+        url: "http://localhost:8080/api/user/"+$("#email1").val()+"/"+$("#pass1").val(),
         method: "GET",
         dataType: "json",
         success: function (datos) {
@@ -22,7 +22,7 @@ const verifyUser = () => {
 
 const verifyEmail = () => {
     $.ajax({
-        url: "http://localhost:8080/api/User/"+$("#email").val(),
+        url: "http://localhost:8080/api/user/"+$("#email").val(),
         method: "GET",
         dataType: "json",
         success: function (datos) {
@@ -66,7 +66,7 @@ const registerClient = () =>{
         name:$("#name").val()
     };
     $.ajax({
-        url: "http://localhost:8080/api/User/new",
+        url: "http://localhost:8080/api/user/new",
         type:"POST",
         data: JSON.stringify(myData),
         contentType:'application/JSON',
